@@ -14,9 +14,12 @@ endif
 if !exists("g:numbertoggle_ignore_filetypes")
     let g:numbertoggle_ignore_filetypes = ["filebeagle"]
 endif
+if !exists("g:numbertoggle_start_in_relative_mode")
+    let g:numbertoggle_start_in_relative_mode = 1
+endif
 let s:insert_mode = 0
 let s:focus = 1
-let s:relativenumber_mode = 1
+let s:relativenumber_mode = g:numbertoggle_start_in_relative_mode
 
 " Enables relative numbers.
 function! s:EnableRelativeNumbers()
